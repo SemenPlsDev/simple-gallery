@@ -42,12 +42,13 @@ btn.addEventListener('click', () => {
 });
 
 */
-
+// Находим элементы из объекта document
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
+// создаем массив и объект из данных изображений
 const images = ['pic1.jpg', `pic2.jpg`, `pic3.jpg`, `pic4.jpg`, `pic5.jpg`];
 const alts = {
   'pic1.jpg': 'Closeup of a human eye',
@@ -57,6 +58,8 @@ const alts = {
   'pic5.jpg': 'Large moth on a leaf'
 };
 
+
+// данная функция в цикле из массива изображений создает новые элементы в HTML и на каждого регистрирует слушатель событий по клику
 for (const image of images) {
   const newImage = document.createElement('img');
   newImage.setAttribute('src', 'images/${image}');
@@ -68,6 +71,8 @@ for (const image of images) {
   });
 }
 
+//  на кнопку вешаем слушатель событий, далее при клике на div элементе меняется цвет заденго фона
+// также изменяется контент текста в конпке button
 btn.addEventListener('click', () => {
   const btnClass = btn.getAttribute('class');
   if (btnClass === 'dark') {
